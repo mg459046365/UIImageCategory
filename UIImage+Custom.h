@@ -8,7 +8,7 @@
 
 @interface UIImage (Custom)
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
-+ (UIImage *)manageImage:(UIImage *)image;//得到适合屏幕的照片
++ (UIImage *)manageImage:(UIImage *)image fitSize:(CGSize)size;//得到适合屏幕的照片
 + (UIImage *)resizeImage:(UIImage *)image toHeight:(CGFloat)height;
 + (UIImage *)resizeImage:(UIImage *)image toWidth:(CGFloat)width;
 + (UIImage *)resizeImage:(UIImage*)image ToSize:(CGSize)size;

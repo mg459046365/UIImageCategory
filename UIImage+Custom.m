@@ -19,10 +19,13 @@
     UIGraphicsEndImageContext();
     return image;
 }
-+ (UIImage *)manageImage:(UIImage *)image {//得到适合屏幕的照片
++ (UIImage *)manageImage:(UIImage *)image fitSize:(CGSize)size{//得到适合屏幕的照片
  
-    float imageViewHeight=SCREENVIEW_HEIGHT-44-90-8;
-    float imageViewWidth= SCREEN_WIDTH-12;
+//    float imageViewHeight=SCREENVIEW_HEIGHT-44-90-8;
+//    float imageViewWidth= SCREEN_WIDTH-12;
+    
+    float imageViewHeight=size.height;
+    float imageViewWidth=size.width;
     
     LFNSlogWidthHeight(image.size.width, image.size.height);
     

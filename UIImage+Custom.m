@@ -6,7 +6,6 @@
 
 #import "UIImage+Custom.h"
 
-#import "Utility.h"
 
 @implementation UIImage (Custom)
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
@@ -19,15 +18,10 @@
     UIGraphicsEndImageContext();
     return image;
 }
-+ (UIImage *)manageImage:(UIImage *)image fitSize:(CGSize)size{//得到适合屏幕的照片
- 
-//    float imageViewHeight=SCREENVIEW_HEIGHT-44-90-8;
-//    float imageViewWidth= SCREEN_WIDTH-12;
-    
++ (UIImage *)manageImage:(UIImage *)image toFitSize:(CGSize)size{
+
     float imageViewHeight=size.height;
     float imageViewWidth=size.width;
-    
-    LFNSlogWidthHeight(image.size.width, image.size.height);
     
     return (image.size.width/image.size.height > imageViewWidth/imageViewHeight) ? [self resizeImage:image toWidth:imageViewWidth] : [self resizeImage:image toHeight:imageViewHeight];
 
@@ -57,8 +51,6 @@
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
     return resultImage;
-
-    
     
 }
 -(UIImage*) circleImage:(UIImage*) image withParam:(CGFloat) inset {
